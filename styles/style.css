@@ -102,9 +102,6 @@ main .grid-item {
   display: flex;
   justify-self: end;
   align-self: center;
-}
-
-.card-button-container {
   padding-right: 25px;
   padding-bottom: 20px;
 }
@@ -159,6 +156,34 @@ main .grid-item {
   transform: translateX(0);
 }
 
+.filter-blur {
+  filter: blur(5px);
+}
+
+.filter-grayscale {
+  filter: grayscale(100%);
+}
+
+.filter-brightness {
+  filter: brightness(150%);
+}
+
+.filter-contrast {
+  filter: contrast(200%);
+}
+
+.filter-saturate {
+  filter: saturate(200%);
+}
+
+.filter-sepia {
+  filter: sepia(80%);
+}
+
+.filter-mixed {
+  filter: blur(2px) sepia(50%) brightness(150%);
+}
+
 .save-button {
   inline-size: 335px;
   block-size: 55px;
@@ -171,6 +196,39 @@ main .grid-item {
   position: relative;
   inline-size: 21px;
   block-size: 21px;
+}
+
+.saved-dialog .floppy-icon {
+  inline-size: 39px;
+  block-size: 39px;
+  margin: auto;
+}
+.saved-dialog[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.saved-dialog[open] .dialog-container {
+  display: flex;
+  gap: 20px;
+}
+
+.dialog-container .floppy-icon {
+  display: block;
+}
+
+.dialog-saved-text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: var(--main-weight-font);
+  max-inline-size: 234px;
+  text-transform: uppercase;
+  display: block;
+}
+
+dialog .dialog-button {
+  inline-size: clamp(14.278rem, 13.574rem + 3.38vw, 16.278rem);
 }
 
 @supports (-webkit-text-stroke: 1px #fff) {
