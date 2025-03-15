@@ -1,1 +1,20 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --main-font: "Inter-Variable";
+    --accent-font: "PressStart2P";
+    --main-font-size: 18px;
+    --title-weight-font: 700;
+    --main-weight-font: 400;
+    --header-title-size: clamp(3.062rem, 2.71rem + 1.502vw, 4.062rem);
+    --header-sub-title-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+    --header-content-padding: clamp(7.5rem, 7.324rem + 0.75vw, 8rem);
+    --border-main-color: #000;
+    --header-bg-color: #fff;
+    --rubber-block-size: clamp(375px, 14.47575em + 30.5164vw, 700px);
+    --text-stroke: 1px rgba(255, 255, 255, 0.5);
+    --main-card-bg-color: #fff;
+    --heart-accent-color: #000;
+    --heart-sparks-color: #ff0000;
+    --card-item-bottom-border: 2px solid #000;
+    --background-image-gradient: repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px), repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px), linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+}
