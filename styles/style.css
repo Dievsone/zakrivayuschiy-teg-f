@@ -229,10 +229,6 @@ main .grid-item {
   gap: 20px;
 }
 
-.dialog-container .floppy-icon {
-  display: block;
-}
-
 .dialog-saved-text {
   font-family: var(--accent-font);
   font-size: 14px;
