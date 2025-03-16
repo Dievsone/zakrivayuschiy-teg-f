@@ -19,6 +19,7 @@
   background-image: var(--background-image-gradient);
   background-size: cover;
   padding-block: 100px;
+  background-attachment: fixed;
 }
 
 .header {
@@ -83,11 +84,14 @@ main .grid-item {
   mix-blend-mode: hard-light;
   font-family: var(--accent-font);
   font-size: 14px;
+  text-shadow: 0 0 1px#fff;
 }
 
 .image-card-container img {
   width: 100%;
   display: block;
+  object-position: center;
+  object-fit: cover;
 }
 
 .content-card-container {
@@ -96,6 +100,7 @@ main .grid-item {
   flex-direction: column;
   gap: 27px;
   border-top: var(--card-item-bottom-border);
+  line-height: 21px;
 }
 
 .card-button-container {
@@ -119,7 +124,6 @@ main .grid-item {
   border: 2px solid #000;
   font-size: 14px;
   font-family: var(--accent-font);
-  color: #000;
   line-height: 90%;
   letter-spacing: 0;
   inline-size: 130px;
@@ -130,8 +134,12 @@ main .grid-item {
   align-items: center;
   justify-content: center;
   background-color: #fff;
-  z-index: 1;
   overflow-x: hidden;
+}
+
+.button-with-text:focus-visible {
+  box-shadow: 2px 2px 0 var(--border-main-color, #000);
+  outline: none;
 }
 
 .button__text {
@@ -149,7 +157,6 @@ main .grid-item {
   background-color: #000; /* Цвет фона кнопки */
   transform: translatex(-100%);
   transition: transform 0.5s ease-in-out;
-  z-index: -1;
 }
 
 .button-with-text:hover::before {
@@ -189,13 +196,17 @@ main .grid-item {
   block-size: 55px;
   gap: 8px;
   margin: auto;
-  isolation: isolate;
+}
+
+.save-button:hover svg {
+  filter: invert(100%);
 }
 
 .floppy-icon {
   position: relative;
   inline-size: 21px;
   block-size: 21px;
+  color: #fff;
 }
 
 .saved-dialog .floppy-icon {
@@ -204,9 +215,14 @@ main .grid-item {
   margin: auto;
 }
 .saved-dialog[open] {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 30px;
+  width: 354px;
+  height: 191px;
+  place-content: center;
+  max-width: 100%;
+  inset: 0;
+  place-items: center;
 }
 .saved-dialog[open] .dialog-container {
   display: flex;
@@ -228,12 +244,42 @@ main .grid-item {
 }
 
 dialog .dialog-button {
-  inline-size: clamp(14.278rem, 13.574rem + 3.38vw, 16.278rem);
+  inline-size: 293px;
+  text-transform: uppercase;
+}
+
+dialog[open]::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
 }
 
 @supports (-webkit-text-stroke: 1px #fff) {
   .img-text-lable {
       -webkit-text-stroke: var(--text-stroke);
       text-shadow: none;
+  }
+}
+
+@media (width <= 375px) {
+  .save-button {
+      flex-direction: column;
+      block-size: 84px;
+      inline-size: 308px;
+  }
+
+  .floppy-icon {
+      inline-size: 28px;
+      block-size: 28px;
+  }
+
+  .saved-dialog[open] {
+      inline-size: 341px;
+  }
+
+  dialog .dialog-button {
+      inline-size: 257px;
+  }
+
+  .dialog-saved-text {
+      max-inline-size: 200px;
   }
 }
