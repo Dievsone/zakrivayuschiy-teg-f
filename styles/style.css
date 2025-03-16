@@ -84,7 +84,7 @@ main .grid-item {
   mix-blend-mode: hard-light;
   font-family: var(--accent-font);
   font-size: 14px;
-  text-shadow: 0 0 1px#fff;
+  text-shadow: 0 0 1px #fff;
 }
 
 .image-card-container img {
@@ -111,7 +111,7 @@ main .grid-item {
   padding-bottom: 20px;
 }
 
-.like-icon {
+.card__icon-button {
   background-color: transparent;
   border: none;
 }
@@ -135,6 +135,14 @@ main .grid-item {
   justify-content: center;
   background-color: #fff;
   overflow-x: hidden;
+}
+
+.floppy-icon {
+  position: relative;
+  inline-size: 21px;
+  block-size: 21px;
+  color: #fff;
+  mix-blend-mode: difference;
 }
 
 .button-with-text:focus-visible {
@@ -198,17 +206,6 @@ main .grid-item {
   margin: auto;
 }
 
-.save-button:hover svg {
-  filter: invert(100%);
-}
-
-.floppy-icon {
-  position: relative;
-  inline-size: 21px;
-  block-size: 21px;
-  color: #fff;
-}
-
 .saved-dialog .floppy-icon {
   inline-size: 39px;
   block-size: 39px;
@@ -256,6 +253,11 @@ dialog[open]::backdrop {
 }
 
 @media (width <= 375px) {
+
+  .img-text-lable {
+    right: 12px;
+  }
+  
   .save-button {
       flex-direction: column;
       block-size: 84px;
